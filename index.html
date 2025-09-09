@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAQ | A Global Movement for Justice & Human Rights</title>
+  <meta name="description" content="HAQ is a global interfaith NGO dedicated to human rights, justice, peace, and accountability. Join our movement to build a better world.">
+  <style>
+    /* Global Styles & Reset */
+    :root {
+      --primary-blue: #0a2f5a;
+      --secondary-blue: #134d91;
+      --accent-gold: #fdd835;
+      --text-dark: #333;
+      --text-light: #f7f9fc;
+      --background-light: #f7f9fc;
+      --white: #ffffff;
+      --crisis-red: #d93025;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background-color: var(--background-light);
+    }
+
+    /* Typography & Layout */
+    h2 { font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center; border-bottom: 3px solid var(--accent-gold); display: inline-block; padding-bottom: 0.5rem; color: var(--primary-blue); font-weight: 700; }
+    .section-header { text-align: center; margin-bottom: 2.5rem; }
+    p { font-size: 1.1rem; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+
+    /* Navigation Bar */
+    .navbar { position: fixed; top: 0; left: 0; width: 100%; background: var(--primary-blue); color: var(--white); display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 2rem; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); transition: background-color 0.3s ease; }
+    .navbar.scrolled { background-color: rgba(10, 47, 90, 0.95); backdrop-filter: blur(5px); }
+    .logo-container { text-align: left; }
+    .nav-logo { font-size: 2rem; font-weight: bold; color: var(--white); text-decoration: none; line-height: 1; }
+    .nav-tagline { display: block; font-size: 0.75rem; color: var(--white); opacity: 0.9; font-weight: 300; letter-spacing: 0.5px; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; }
+    .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+    .nav-links a:hover { color: var(--accent-gold); }
+    .nav-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: var(--white); cursor: pointer; }
+
+    /* Hero Section */
+    .hero { background: linear-gradient(rgba(10, 47, 90, 0.8), rgba(19, 77, 145, 0.8)), url('https://images.unsplash.com/photo-1598224195535-3252a125e1a1?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600') center/cover no-repeat; color: var(--white); text-align: center; padding: 12rem 2rem 8rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .hero h1 { font-size: 3.8rem; color: var(--white); margin-bottom: 1rem; }
+    .hero p { font-size: 1.4rem; margin-bottom: 2.5rem; max-width: 800px; font-style: italic; }
+    .cta-button { background: var(--accent-gold); color: var(--primary-blue); padding: 1rem 2.5rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s ease, background-color 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    .cta-button:hover { transform: translateY(-3px); background-color: #fff176; }
+
+    /* Text Formatting */
+    strong { color: var(--secondary-blue); }
+
+    /* "Shared Conviction" Section */
+    .quote-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    blockquote { background: var(--background-light); border-left: 5px solid var(--secondary-blue); padding: 1.5rem; margin: 0; border-radius: 0 8px 8px 0; font-style: italic; font-size: 1.1rem; display: flex; flex-direction: column; justify-content: space-between; }
+    blockquote .source { display: block; margin-top: 1rem; font-style: normal; font-weight: bold; color: var(--primary-blue); text-align: right; font-size: 1rem; }
+    blockquote .source::before { content: "- "; }
+
+    /* "Problem" Section */
+    #problem { background-color: var(--white); }
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .problem-card { background: var(--white); padding: 2rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.07); }
+    .problem-icon { width: 50px; height: 50px; margin: 0 auto 1rem auto; fill: var(--secondary-blue); }
+    .problem-card h3 { color: var(--secondary-blue); margin-bottom: 0.5rem; }
+    .final-thought { font-style: italic; font-weight: 600; text-align: center; margin-top: 3rem; color: var(--secondary-blue); }
+
+    /* Universal Struggle Section (NEW STATIC VERSION) */
+    #universal-struggle { background-color: var(--white); }
+    .struggle-container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
+    .world-map-svg { width: 100%; height: auto; }
+    .crisis-list h3 { color: var(--secondary-blue); margin-bottom: 1rem; font-size: 1.5rem; }
+    .crisis-list ul { list-style: none; padding: 0; }
+    .crisis-list li { margin-bottom: 1rem; font-size: 1rem; line-height: 1.6; }
+    .crisis-list li strong { color: var(--primary-blue); font-size: 1.1rem; display: block; }
+
+    /* Robust "Pillars of HAQ" Section */
+    .pillars-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 3rem; }
+    .pillar-card-robust { background: var(--white); border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); display: flex; align-items: center; padding: 2rem; gap: 2rem; transition: box-shadow 0.3s ease; border-left: 5px solid var(--accent-gold); }
+    .pillar-card-robust:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    .pillar-icon-container { flex-shrink: 0; }
+    .pillar-icon { width: 60px; height: 60px; fill: var(--primary-blue); }
+    .pillar-content h3 { margin: 0 0 0.5rem 0; font-size: 1.6rem; color: var(--secondary-blue); }
+    .pillar-content h3 span { font-size: 1rem; letter-spacing: 1px; color: var(--primary-blue); opacity: 0.8; font-weight: 700; }
+    .pillar-content p { font-size: 1.05rem; margin-bottom: 0; }
+    
+    /* NEW Section: Our Power is Our Unity */
+    #our-power { background-color: var(--white); }
+
+    /* "Ultimate Goal" Section */
+    .goal-background { background: linear-gradient(rgba(10, 47, 90, 0.85), rgba(19, 77, 145, 0.85)), url('https://images.unsplash.com/photo-1546252922-383792b0c95a?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600') center/cover no-repeat; border-radius: 15px; padding: 4rem 2rem; color: var(--white); }
+    .goal-background h2 { color: var(--white); border-bottom-color: var(--accent-gold); }
+    .goal-background p { color: var(--white); }
+
+    /* Join Us Section */
+    #join h2 { font-size: 2.5rem; }
+
+    /* Footer */
+    footer { background: var(--primary-blue); color: var(--white); text-align: center; padding: 2rem; font-size: 0.9rem; }
+
+    /* Responsive Design */
+    @media (max-width: 900px) { .pillar-card-robust { flex-direction: column; text-align: center; } .pillar-content { text-align: center; } .struggle-container { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) {
+      .navbar { padding: 0.5rem 1rem; }
+      .logo-container { text-align: center; flex-grow: 1; }
+      .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 65px; left: 0; background-color: var(--primary-blue); padding: 1rem 0; }
+      .nav-links.active { display: flex; }
+      .nav-toggle { display: block; position: absolute; left: 1rem; }
+      h2 { font-size: 1.8rem; }
+      .hero h1 { font-size: 2.8rem; }
+      .quote-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="logo-container">
+      <a href="#" class="nav-logo">HAQ</a>
+      <span class="nav-tagline">Humanity • Accountability • Quran</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#amanah">Our Sacred Trust</a></li>
+      <li><a href="#conviction">Our Shared Duty</a></li>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#universal-struggle">The Universal Struggle</a></li>
+      <li><a href="#pillars">Our Core Strategies</a></li>
+      <li><a href="#our-power">Our Power</a></li>
+      <li><a href="#goal">Our Ultimate Goal</a></li>
+      <li><a href="#join">Join Us</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+  </nav>
+
+  <header class="hero" id="home">
+    <h1>A Sacred Duty for Justice.</h1>
+    <p>A global movement answering a universal call to unite people, protect the weak, and challenge the corrupt.</p>
+    <a href="#amanah" class="cta-button">Understand Our Mission</a>
+  </header>
+
+  <main>
+    <section id="amanah" class="container">
+      <div class="section-header">
+        <h2>Our Sacred Trust</h2>
+      </div>
+      <p>HAQ is rooted in the belief that every human being carries a responsibility to uphold justice and protect dignity. Our inspiration comes from the Quranic teaching that all people are created from a single origin and should treat each other with respect and fairness (Quran 49:13).</p>
+      <p>We do not ask anyone to change their faith. HAQ calls on people of every religion and conscience to act according to their best teachings: to defend the weak, to speak truth to power, and to serve their communities with honesty and compassion.</p>
+      <p>This work is an <strong>amanah — a trust</strong> — and we commit to fulfill it with transparency, accountability, and measurable impact.</p>
+    </section>
+
+    <section id="conviction" class="container">
+      <div class="section-header">
+          <h2>Our Shared Duty: One Message in All Faiths</h2>
+      </div>
+      <p>Our mission is built on a simple and powerful truth: <strong>no major religion says you can get to Heaven without doing your duties on Earth.</strong> The promise of an eternal reward is always connected to a life of justice and kindness.</p>
+      <div class="quote-grid">
+          <blockquote>“O you who believe, stand firm for justice as witnesses for Allah, even if it is against yourselves, your parents, or your relatives. Whether a person is rich or poor, Allah is closer to them both. So do not follow your own desires, or you will not be just.”<span class="source">The Quran 4:135 (Islam)</span></blockquote>
+          <blockquote>“Then the King will say to the good people on his right, ‘Come, you who are blessed by my Father. Receive the kingdom that was prepared for you... For when I was hungry, you gave me food. When I was thirsty, you gave me something to drink.’”<span class="source">The Bible, Matthew 25:34-35 (Christianity)</span></blockquote>
+          <blockquote>“He has shown you, O man, what is good. And what does the LORD require of you? To do justice, to love kindness, and to walk humbly with your God.”<span class="source">The Torah, Micah 6:8 (Judaism)</span></blockquote>
+          <blockquote>“A person should not do to others what they would not like for themselves. This is the simple rule of a good life.”<span class="source">The Mahabharata (Hinduism)</span></blockquote>
+          <blockquote>“Avoid all evil, do good, and clean your mind. This is the teaching of all the Buddhas.”<span class="source">The Dhammapada 183 (Buddhism)</span></blockquote>
+          <blockquote>“The one who serves others without wanting a reward will find God.”<span class="source">Guru Granth Sahib (Sikhism)</span></blockquote>
+      </div>
+    </section>
+    
+    <section id="problem" class="container">
+      <div class="section-header">
+        <h2>If All Faiths Agree, Why Is Our World Unjust?</h2>
+      </div>
+      <p>The holy books are clear. The path is shown. The problem is not the message from God. The problem is what people do.</p>
+      <div class="problem-grid">
+          <div class="problem-card"><div class="problem-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-4V7h2v6h-2z"/></svg></div><h3>Faith Used for Power</h3><p>Some leaders use religion to get power and money. They tell people to divide, so they can control them.</p></div>
+          <div class="problem-card"><div class="problem-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 13h-2V7h2v6zm0 4h-2v-2h2v2zM12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div><h3>Good People are Silent</h3><p>When good people say nothing, it allows bad things to happen. Our silence is seen as an agreement.</p></div>
+          <div class="problem-card"><div class="problem-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 .55 0 1 .45 1 1s-.45 1-1 1c-3.31 0-6 2.69-6 6s2.69 6 6 6c.55 0 1 .45 1 1s-.45 1-1 1c-4.42 0-8-3.58-8-8zm15 0c0 .55-.45 1-1 1s-1-.45-1-1c0-3.31-2.69-6-6-6s-6 2.69-6 6c0 .55-.45 1-1 1s-1-.45-1-1c0-4.42 3.58-8 8-8s8 3.58 8 8z"/></svg></div><h3>We Are Divided</h3><p>We forget we are one human family. The people who want power use our differences to keep us weak.</p></div>
+      </div>
+    </section>
+
+    <section id="universal-struggle" class="container">
+      <div class="section-header">
+        <h2>One Enemy, One Fight: A Universal Struggle</h2>
+      </div>
+      <p>Injustice is a global disease that attacks all of humanity. A child's tears in Gaza are no different from a child's tears in Ukraine. The pain of a family in Syria is the same as the pain of a family in Congo. The enemy is not a country or a religion. The enemy is injustice itself.</p>
+      
+      <div class="struggle-container">
+          <div class="struggle-map">
+              <svg class="world-map-svg" viewBox="0 0 1000 525">
+                  <path d="M500 0L499.99 0.03C414.2 1.3 355.6 15.34 322.21 34.11C288.08 53.3 259.01 79.5 242.45 109.11C234.1 123.75 229.41 139.73 226.79 155.85C224.2 171.8 224.2 178.2 226.79 194.15C229.41 210.27 234.1 226.25 242.45 240.89C259.01 270.5 288.08 296.7 322.21 315.89C355.6 334.66 414.2 348.7 499.99 349.97L500 350L500.01 349.97C585.8 348.7 644.4 334.66 677.79 315.89C711.92 296.7 740.99 270.5 757.55 240.89C765.9 226.25 770.59 210.27 773.21 194.15C775.8 178.2 775.8 171.8 773.21 155.85C770.59 139.73 765.9 123.75 757.55 109.11C740.99 79.5 711.92 53.3 677.79 34.11C644.4 15.34 585.8 1.3 500.01 0.03L500 0ZM495.69 45.42C437.98 46.46 388.33 55.48 351.41 68.3C337.8 73.1 327.39 77.16 317.84 81.76L317.06 82.14L314.16 83.56C306.92 86.91 301.76 89.43 294.61 93.3L293.26 94.02L291.64 94.85C282.63 99.4 276.99 102.52 268.45 107.56C262.1 111.23 259.33 113.06 253.29 117.15C249.77 119.53 245.92 122.25 242.45 125.13C240.69 126.6 238.29 128.59 236.43 130.34L235.32 131.39C233.56 133.05 231.33 135.25 229.8 137.04C228.61 138.41 227.42 139.95 226.29 141.49C225.43 142.66 224.38 144.15 223.59 145.54C222.09 148.1 220.52 151.13 219.51 153.86C218.46 156.71 217.78 159.98 217.41 163.26C217.04 166.56 217.04 183.44 217.41 186.74C217.78 190.02 218.46 193.29 219.51 196.14C220.52 198.87 222.09 201.9 223.59 204.46C224.38 205.85 225.43 207.34 226.29 208.51C227.42 209.95 228.61 211.59 229.8 212.96C231.33 214.75 233.56 216.95 235.32 218.61L236.43 219.66C238.29 221.41 240.69 223.4 242.45 224.87C245.92 227.75 249.77 230.47 253.29 232.85C259.33 236.94 262.1 238.77 268.45 242.44C276.99 247.48 282.63 250.6 291.64 255.15L293.26 255.98L294.61 256.7C301.76 260.57 306.92 263.09 314.16 266.44L317.06 267.86L317.84 268.24C327.39 272.84 337.8 276.9 351.41 281.7C388.33 294.52 437.98 303.54 495.69 304.58L500 304.68L504.31 304.58C562.02 303.54 611.67 294.52 648.59 281.7C662.2 276.9 672.61 272.84 682.16 268.24L682.94 267.86L685.84 266.44C693.08 263.09 698.24 260.57 705.39 256.7L706.74 255.98L708.36 255.15C717.37 250.6 723.01 247.48 731.55 242.44C737.9 238.77 740.67 236.94 746.71 232.85C750.23 230.47 754.08 227.75 757.55 224.87C759.31 223.4 761.71 221.41 763.57 219.66L764.68 218.61C766.44 216.95 768.67 214.75 770.2 212.96C771.39 211.59 772.58 209.95 773.71 208.51C774.57 207.34 775.62 205.85 776.41 204.46C777.91 201.9 779.48 198.87 780.49 196.14C781.54 193.29 782.22 190.02 782.59 186.74C782.96 183.44 782.96 166.56 782.59 163.26C782.22 159.98 781.54 156.71 780.49 153.86C779.48 151.13 777.91 148.1 776.41 145.54C775.62 144.15 774.57 142.66 773.71 141.49C772.58 139.95 771.39 138.41 770.2 137.04C768.67 135.25 766.44 133.05 764.68 131.39L763.57 130.34C761.71 128.59 759.31 126.6 757.55 125.13C754.08 122.25 750.23 119.53 746.71 117.15C740.67 113.06 737.9 111.23 731.55 107.56C723.01 102.52 717.37 99.4 708.36 94.85L706.74 94.02L705.39 93.3C698.24 89.43 693.08 86.91 685.84 83.56L682.94 82.14L682.16 81.76C672.61 77.16 662.2 73.1 648.59 68.3C611.67 55.48 562.02 46.46 504.31 45.42L500 45.32L495.69 45.42Z" fill="#eaf2ff" stroke="#fff" stroke-width="1"/>
+                  <circle cx="482" cy="165" r="5" fill="var(--crisis-red)"><title>Gaza/Palestine</title></circle><circle cx="465" cy="130" r="5" fill="var(--crisis-red)"><title>Ukraine</title></circle><circle cx="495" cy="160" r="5" fill="var(--crisis-red)"><title>Syria</title></circle><circle cx="445" cy="245" r="5" fill="var(--crisis-red)"><title>DR Congo</title></circle><circle cx="505" cy="195" r="5" fill="var(--crisis-red)"><title>Yemen</title></circle><circle cx="475" cy="235" r="5" fill="var(--crisis-red)"><title>Sudan</title></circle><circle cx="610" cy="185" r="5" fill="var(--crisis-red)"><title>Myanmar</title></circle>
+              </svg>
+          </div>
+          <div class="crisis-list">
+              <h3>Humanity in Crisis: A Snapshot</h3>
+              <ul>
+                  <li><strong>Gaza:</strong> 2.2+ million affected. Religions: Muslim, Christian.</li>
+                  <li><strong>Ukraine:</strong> 14.6+ million affected. Religions: Christian, Jewish, Muslim.</li>
+                  <li><strong>Syria:</strong> 16.7+ million affected. Religions: Muslim, Christian, Druze.</li>
+                  <li><strong>DR Congo:</strong> 25.4+ million affected. Religions: Christian, Muslim, Indigenous beliefs.</li>
+                  <li><strong>Yemen:</strong> 21.6+ million affected. Religions: Muslim.</li>
+                  <li><strong>Sudan:</strong> 24.8+ million affected. Religions: Muslim, Christian.</li>
+                  <li><strong>Myanmar:</strong> 18.6+ million affected. Religions: Buddhist, Muslim, Christian.</li>
+              </ul>
+          </div>
+      </div>
+    </section>
+
+    <section id="pillars" class="container">
+        <div class="section-header">
+            <h2>Our Core Strategies</h2>
+        </div>
+        <p>A vision is not enough. We need a plan. Our entire movement is built on five powerful strategies that guide every action we take.</p>
+        <div class="pillars-grid">
+            <div class="pillar-card-robust"><div class="pillar-icon-container"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div></div><div class="pillar-content"><h3><span>STRATEGY I</span>Reclaiming the Narrative</h3><p>Corrupt leaders use lies to control people. Our strategy is to fight these lies with truth. We create clear and simple content that shows the true, peaceful message of justice in our faiths, so people cannot be fooled.</p></div></div>
+            <div class="pillar-card-robust"><div class="pillar-icon-container"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg></div></div><div class="pillar-content"><h3><span>STRATEGY II</span>Championing Fearless Accountability</h3><p>Injustice grows when no one challenges it. Our strategy is to challenge injustice directly and without fear. We use public campaigns and the law to force leaders to be honest and to serve the people, not themselves.</p></div></div>
+            <div class="pillar-card-robust"><div class="pillar-icon-container"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div></div><div class="pillar-content"><h3><span>STRATEGY III</span>Amplifying the Voiceless</h3><p>The oppressed are strong, but their voices are often silenced. Our strategy is to give them a microphone. We share their real stories with the world, so no one can pretend the problem does not exist.</p></div></div>
+            <div class="pillar-card-robust"><div class="pillar-icon-container"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 8.81C7.5 8.31 6.79 8 6 8c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg></div></div><div class="pillar-content"><h3><span>STRATEGY IV</span>Forging Unbreakable Alliances</h3><p>They keep power by dividing us. Our strategy is to unite. We build strong friendships and partnerships with good people from all faiths, proving that our shared love for humanity is stronger than their hate.</p></div></div>
+            <div class="pillar-card-robust"><div class="pillar-icon-container"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div></div><div class="pillar-content"><h3><span>STRATEGY V</span>Cultivating Principled Leadership</h3><p>Fighting corruption is not enough; we must build something better in its place. Our strategy is to train a new generation of leaders who are honest, just, and compassionate. We are building the future.</p></div></div>
+        </div>
+    </section>
+
+    <section id="our-power" class="container">
+        <div class="section-header">
+            <h2>Our Power Is Our Unity</h2>
+        </div>
+        <p>It is easy to feel helpless when we see so much suffering in the world. But we are not helpless. We are the people. In our home countries, we are the citizens who vote and pay the taxes that run our governments.</p>
+        <p>Alone, our voices are small. But when we unite—millions of us from all faiths, demanding change—our voices become a powerful force that no leader can ignore. Peaceful, organized, and united protest is how we remind the powerful that they serve us, and not the other way around. This is how we will change everything.</p>
+    </section>
+
+    <section id="goal" class="container">
+      <div class="goal-background">
+        <div class="section-header">
+          <h2>Our Ultimate Goal: A Reflection of Heaven on Earth</h2>
+        </div>
+        <p>Think about how our holy books describe Paradise or Heaven. They speak of beautiful gardens, flowing rivers, and endless peace. They use the best things of this Earth to help us understand the beauty of the next life.</p>
+        <p>This is a powerful message from God. He has already shown us how to build a world of peace and beauty. When we choose to live by our sacred duties of justice and kindness, we are not just waiting for Paradise. We are building a small piece of it right here on Earth for all people.</p>
+      </div>
+    </section>
+
+    <section id="join" class="container">
+        <div class="section-header">
+            <h2>Fulfill Your Duty. Build Your Legacy.</h2>
+        </div>
+        <p>This is more than a cause; it is a calling. This is your personal duty, your answer to God, and your path to an eternal reward. Join the HAQ movement and become a voice for humanity, accountability, and truth.</p>
+        <div class="join-buttons">
+            <a href="mailto:info@haq.ngo" class="cta-button">Email Us</a>
+            <a href="#" class="cta-button">Volunteer</a>
+            <a href="#" class="cta-button">Donate</a>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 HAQ — Humanity, Accountability, Quran | haq.ngo</p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => { if (navLinks.classList.contains('active')) { navLinks.classList.remove('active'); } });
+    });
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
+    });
+  </script>
+
+</body>
+</html>
