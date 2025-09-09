@@ -48,34 +48,33 @@
     .hero { background: linear-gradient(rgba(10, 47, 90, 0.8), rgba(19, 77, 145, 0.8)), url('https://images.unsplash.com/photo-1598224195535-3252a125e1a1?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600') center/cover no-repeat; color: var(--white); text-align: center; padding: 12rem 2rem 8rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     .hero h1 { font-size: 3.8rem; color: var(--white); margin-bottom: 1rem; }
     .hero p { font-size: 1.4rem; margin-bottom: 2.5rem; max-width: 800px; font-style: italic; }
-    .cta-button { background: var(--accent-gold); color: var(--primary-blue); padding: 1rem 2.5rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s ease, background-color 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    .cta-button { background: var(--accent-gold); color: var(--primary-blue); padding: 1rem 2.5rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s ease, background-color 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin: 0.5rem; }
     .cta-button:hover { transform: translateY(-3px); background-color: #fff176; }
 
     /* Text Formatting */
     strong { color: var(--secondary-blue); }
 
     /* "Shared Conviction" Section */
+    #conviction { background-color: var(--white); }
     .quote-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem; margin-top: 3rem; }
     blockquote { background: var(--background-light); border-left: 5px solid var(--secondary-blue); padding: 1.5rem; margin: 0; border-radius: 0 8px 8px 0; font-style: italic; font-size: 1.1rem; display: flex; flex-direction: column; justify-content: space-between; }
     blockquote .source { display: block; margin-top: 1rem; font-style: normal; font-weight: bold; color: var(--primary-blue); text-align: right; font-size: 1rem; }
     blockquote .source::before { content: "- "; }
 
     /* "Problem" Section */
-    #problem { background-color: var(--white); }
+    #problem { background-color: var(--background-light); }
     .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
     .problem-card { background: var(--white); padding: 2rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.07); }
     .problem-icon { width: 50px; height: 50px; margin: 0 auto 1rem auto; fill: var(--secondary-blue); }
     .problem-card h3 { color: var(--secondary-blue); margin-bottom: 0.5rem; }
     .final-thought { font-style: italic; font-weight: 600; text-align: center; margin-top: 3rem; color: var(--secondary-blue); }
 
-    /* Universal Struggle Section (NEW STATIC VERSION) */
+    /* Universal Struggle Section (Dashboard Version) */
     #universal-struggle { background-color: var(--white); }
-    .struggle-container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
-    .world-map-svg { width: 100%; height: auto; }
-    .crisis-list h3 { color: var(--secondary-blue); margin-bottom: 1rem; font-size: 1.5rem; }
-    .crisis-list ul { list-style: none; padding: 0; }
-    .crisis-list li { margin-bottom: 1rem; font-size: 1rem; line-height: 1.6; }
-    .crisis-list li strong { color: var(--primary-blue); font-size: 1.1rem; display: block; }
+    .crisis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .crisis-card { background: var(--background-light); padding: 1.2rem; border-radius: 8px; border-left: 4px solid var(--crisis-red); }
+    .crisis-card h4 { font-size: 1.2rem; color: var(--secondary-blue); margin-bottom: 0.2rem; }
+    .crisis-card p { font-size: 0.95rem; margin: 0; line-height: 1.5; }
 
     /* Robust "Pillars of HAQ" Section */
     .pillars-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 3rem; }
@@ -87,7 +86,59 @@
     .pillar-content h3 span { font-size: 1rem; letter-spacing: 1px; color: var(--primary-blue); opacity: 0.8; font-weight: 700; }
     .pillar-content p { font-size: 1.05rem; margin-bottom: 0; }
     
-    /* NEW Section: Our Power is Our Unity */
+    /* NEW Section: Our Method (REDESIGNED) */
+    #our-method { background-color: var(--white); }
+    #our-method .hadith-box {
+      background: var(--background-light);
+      border: 2px solid var(--accent-gold);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 3rem auto;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    #our-method .hadith-box blockquote {
+      border-left: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+      font-size: 1.2rem;
+      font-style: normal;
+      color: var(--text-dark);
+      line-height: 1.8;
+    }
+    #our-method .hadith-box blockquote .source {
+      font-size: 1.0rem;
+      color: var(--primary-blue);
+      margin-top: 1.5rem;
+    }
+    .method-actions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .method-action-card {
+      background: var(--background-light);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      border-top: 4px solid var(--primary-blue);
+    }
+    .method-action-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-blue);
+      margin-bottom: 0.8rem;
+    }
+    .method-action-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* "Our Power is Our Unity" Section */
     #our-power { background-color: var(--white); }
 
     /* "Ultimate Goal" Section */
@@ -96,20 +147,28 @@
     .goal-background p { color: var(--white); }
 
     /* Join Us Section */
-    #join h2 { font-size: 2.5rem; }
+    #join h2 { font-size: 2.5rem; display: inline-block; text-align: center; width: auto; } /* Ensure it remains centered */
+    .join-buttons { margin-top: 2rem; text-align: center; } /* Center buttons */
+    .whatsapp-button { background-color: #25D366; color: white; }
+    .whatsapp-button:hover { background-color: #128C7E; color: white; }
+    .whatsapp-button svg { width: 24px; height: 24px; fill: currentColor; }
 
     /* Footer */
     footer { background: var(--primary-blue); color: var(--white); text-align: center; padding: 2rem; font-size: 0.9rem; }
 
     /* Responsive Design */
-    @media (max-width: 900px) { .pillar-card-robust { flex-direction: column; text-align: center; } .pillar-content { text-align: center; } .struggle-container { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) {
+      .pillar-card-robust { flex-direction: column; text-align: center; }
+      .pillar-content { text-align: center; }
+      .method-actions-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
       .navbar { padding: 0.5rem 1rem; }
       .logo-container { text-align: center; flex-grow: 1; }
       .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 65px; left: 0; background-color: var(--primary-blue); padding: 1rem 0; }
       .nav-links.active { display: flex; }
       .nav-toggle { display: block; position: absolute; left: 1rem; }
-      h2 { font-size: 1.8rem; }
+      h2, #join h2 { font-size: 1.8rem; }
       .hero h1 { font-size: 2.8rem; }
       .quote-grid { grid-template-columns: 1fr; }
     }
@@ -128,6 +187,7 @@
       <li><a href="#problem">The Problem</a></li>
       <li><a href="#universal-struggle">The Universal Struggle</a></li>
       <li><a href="#pillars">Our Core Strategies</a></li>
+      <li><a href="#our-method">Our Method</a></li>
       <li><a href="#our-power">Our Power</a></li>
       <li><a href="#goal">Our Ultimate Goal</a></li>
       <li><a href="#join">Join Us</a></li>
@@ -180,29 +240,21 @@
 
     <section id="universal-struggle" class="container">
       <div class="section-header">
-        <h2>One Enemy, One Fight: A Universal Struggle</h2>
+        <h2>One Enemy, One Fight: The Global Crisis Dashboard</h2>
       </div>
-      <p>Injustice is a global disease that attacks all of humanity. A child's tears in Gaza are no different from a child's tears in Ukraine. The pain of a family in Syria is the same as the pain of a family in Congo. The enemy is not a country or a religion. The enemy is injustice itself.</p>
+      <p>Injustice is a universal disease that attacks all of humanity. A child's tears in Gaza are no different from a child's tears in Ukraine. The enemy is not a country or a religion. The enemy is injustice itself, in all its forms.</p>
       
-      <div class="struggle-container">
-          <div class="struggle-map">
-              <svg class="world-map-svg" viewBox="0 0 1000 525">
-                  <path d="M500 0L499.99 0.03C414.2 1.3 355.6 15.34 322.21 34.11C288.08 53.3 259.01 79.5 242.45 109.11C234.1 123.75 229.41 139.73 226.79 155.85C224.2 171.8 224.2 178.2 226.79 194.15C229.41 210.27 234.1 226.25 242.45 240.89C259.01 270.5 288.08 296.7 322.21 315.89C355.6 334.66 414.2 348.7 499.99 349.97L500 350L500.01 349.97C585.8 348.7 644.4 334.66 677.79 315.89C711.92 296.7 740.99 270.5 757.55 240.89C765.9 226.25 770.59 210.27 773.21 194.15C775.8 178.2 775.8 171.8 773.21 155.85C770.59 139.73 765.9 123.75 757.55 109.11C740.99 79.5 711.92 53.3 677.79 34.11C644.4 15.34 585.8 1.3 500.01 0.03L500 0ZM495.69 45.42C437.98 46.46 388.33 55.48 351.41 68.3C337.8 73.1 327.39 77.16 317.84 81.76L317.06 82.14L314.16 83.56C306.92 86.91 301.76 89.43 294.61 93.3L293.26 94.02L291.64 94.85C282.63 99.4 276.99 102.52 268.45 107.56C262.1 111.23 259.33 113.06 253.29 117.15C249.77 119.53 245.92 122.25 242.45 125.13C240.69 126.6 238.29 128.59 236.43 130.34L235.32 131.39C233.56 133.05 231.33 135.25 229.8 137.04C228.61 138.41 227.42 139.95 226.29 141.49C225.43 142.66 224.38 144.15 223.59 145.54C222.09 148.1 220.52 151.13 219.51 153.86C218.46 156.71 217.78 159.98 217.41 163.26C217.04 166.56 217.04 183.44 217.41 186.74C217.78 190.02 218.46 193.29 219.51 196.14C220.52 198.87 222.09 201.9 223.59 204.46C224.38 205.85 225.43 207.34 226.29 208.51C227.42 209.95 228.61 211.59 229.8 212.96C231.33 214.75 233.56 216.95 235.32 218.61L236.43 219.66C238.29 221.41 240.69 223.4 242.45 224.87C245.92 227.75 249.77 230.47 253.29 232.85C259.33 236.94 262.1 238.77 268.45 242.44C276.99 247.48 282.63 250.6 291.64 255.15L293.26 255.98L294.61 256.7C301.76 260.57 306.92 263.09 314.16 266.44L317.06 267.86L317.84 268.24C327.39 272.84 337.8 276.9 351.41 281.7C388.33 294.52 437.98 303.54 495.69 304.58L500 304.68L504.31 304.58C562.02 303.54 611.67 294.52 648.59 281.7C662.2 276.9 672.61 272.84 682.16 268.24L682.94 267.86L685.84 266.44C693.08 263.09 698.24 260.57 705.39 256.7L706.74 255.98L708.36 255.15C717.37 250.6 723.01 247.48 731.55 242.44C737.9 238.77 740.67 236.94 746.71 232.85C750.23 230.47 754.08 227.75 757.55 224.87C759.31 223.4 761.71 221.41 763.57 219.66L764.68 218.61C766.44 216.95 768.67 214.75 770.2 212.96C771.39 211.59 772.58 209.95 773.71 208.51C774.57 207.34 775.62 205.85 776.41 204.46C777.91 201.9 779.48 198.87 780.49 196.14C781.54 193.29 782.22 190.02 782.59 186.74C782.96 183.44 782.96 166.56 782.59 163.26C782.22 159.98 781.54 156.71 780.49 153.86C779.48 151.13 777.91 148.1 776.41 145.54C775.62 144.15 774.57 142.66 773.71 141.49C772.58 139.95 771.39 138.41 770.2 137.04C768.67 135.25 766.44 133.05 764.68 131.39L763.57 130.34C761.71 128.59 759.31 126.6 757.55 125.13C754.08 122.25 750.23 119.53 746.71 117.15C740.67 113.06 737.9 111.23 731.55 107.56C723.01 102.52 717.37 99.4 708.36 94.85L706.74 94.02L705.39 93.3C698.24 89.43 693.08 86.91 685.84 83.56L682.94 82.14L682.16 81.76C672.61 77.16 662.2 73.1 648.59 68.3C611.67 55.48 562.02 46.46 504.31 45.42L500 45.32L495.69 45.42Z" fill="#eaf2ff" stroke="#fff" stroke-width="1"/>
-                  <circle cx="482" cy="165" r="5" fill="var(--crisis-red)"><title>Gaza/Palestine</title></circle><circle cx="465" cy="130" r="5" fill="var(--crisis-red)"><title>Ukraine</title></circle><circle cx="495" cy="160" r="5" fill="var(--crisis-red)"><title>Syria</title></circle><circle cx="445" cy="245" r="5" fill="var(--crisis-red)"><title>DR Congo</title></circle><circle cx="505" cy="195" r="5" fill="var(--crisis-red)"><title>Yemen</title></circle><circle cx="475" cy="235" r="5" fill="var(--crisis-red)"><title>Sudan</title></circle><circle cx="610" cy="185" r="5" fill="var(--crisis-red)"><title>Myanmar</title></circle>
-              </svg>
-          </div>
-          <div class="crisis-list">
-              <h3>Humanity in Crisis: A Snapshot</h3>
-              <ul>
-                  <li><strong>Gaza:</strong> 2.2+ million affected. Religions: Muslim, Christian.</li>
-                  <li><strong>Ukraine:</strong> 14.6+ million affected. Religions: Christian, Jewish, Muslim.</li>
-                  <li><strong>Syria:</strong> 16.7+ million affected. Religions: Muslim, Christian, Druze.</li>
-                  <li><strong>DR Congo:</strong> 25.4+ million affected. Religions: Christian, Muslim, Indigenous beliefs.</li>
-                  <li><strong>Yemen:</strong> 21.6+ million affected. Religions: Muslim.</li>
-                  <li><strong>Sudan:</strong> 24.8+ million affected. Religions: Muslim, Christian.</li>
-                  <li><strong>Myanmar:</strong> 18.6+ million affected. Religions: Buddhist, Muslim, Christian.</li>
-              </ul>
-          </div>
+      <div class="crisis-grid">
+          <div class="crisis-card"><h4>War in Gaza</h4><p>2.2+ million affected. Religions: Muslim, Christian.</p></div>
+          <div class="crisis-card"><h4>War in Ukraine</h4><p>14.6+ million affected. Religions: Christian, Jewish, Muslim.</p></div>
+          <div class="crisis-card"><h4>War in Syria</h4><p>16.7+ million affected. Religions: Muslim, Christian, Druze.</p></div>
+          <div class="crisis-card"><h4>Conflict in DR Congo</h4><p>25.4+ million affected. Religions: Christian, Muslim, Indigenous beliefs.</p></div>
+          <div class="crisis-card"><h4>Famine in Yemen</h4><p>21.6+ million affected. Religions: Muslim.</p></div>
+          <div class="crisis-card"><h4>Conflict in Sudan</h4><p>24.8+ million affected. Religions: Muslim, Christian.</p></div>
+          <div class="crisis-card"><h4>Persecution in Myanmar</h4><p>18.6+ million affected. Religions: Buddhist, Muslim, Christian.</p></div>
+          <div class="crisis-card"><h4>Persecution in China (Uyghurs)</h4><p>1+ million affected. Religions: Muslim, Buddhist, Christian.</p></div>
+          <div class="crisis-card"><h4>Systemic Injustice in Pakistan</h4><p>Millions affected by corruption and political oppression.</p></div>
+          <div class="crisis-card"><h4>Minority Rights in India (Kashmir)</h4><p>Millions affected by persecution.</p></div>
       </div>
     </section>
 
@@ -218,6 +270,31 @@
             <div class="pillar-card-robust"><div class="pillar-icon-container"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 8.81C7.5 8.31 6.79 8 6 8c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg></div></div><div class="pillar-content"><h3><span>STRATEGY IV</span>Forging Unbreakable Alliances</h3><p>They keep power by dividing us. Our strategy is to unite. We build strong friendships and partnerships with good people from all faiths, proving that our shared love for humanity is stronger than their hate.</p></div></div>
             <div class="pillar-card-robust"><div class="pillar-icon-container"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div></div><div class="pillar-content"><h3><span>STRATEGY V</span>Cultivating Principled Leadership</h3><p>Fighting corruption is not enough; we must build something better in its place. Our strategy is to train a new generation of leaders who are honest, just, and compassionate. We are building the future.</p></div></div>
         </div>
+    </section>
+
+    <section id="our-method" class="container">
+        <div class="section-header">
+            <h2>Our Method: Stopping the Hand of the Oppressor</h2>
+        </div>
+        <p>HAQ is different. We do not collect donations for food, medicine, or shelter. While this work is noble, our mission is to stop the <strong>source</strong> of the suffering.</p>
+        <p>Our goal is not to create dependency, but to empower people to stand for their own rights. We are guided by the wisdom of the Prophet Muhammad (peace be upon him):</p>
+        <div class="hadith-box">
+            <blockquote>
+                The Messenger of Allah said, "Help your brother, whether he is an oppressor or is oppressed." A man asked, "O Messenger of Allah! I help him when he is oppressed, but how can I help him when he is an oppressor?" He said, "By preventing him from oppressing others, for that is how you help him."
+                <span class="source">Sahih al-Bukhari</span>
+            </blockquote>
+        </div>
+        <div class="method-actions-grid">
+            <div class="method-action-card">
+                <h3>Help the Oppressed</h3>
+                <p>We empower those who suffer by giving them a voice, resources, and the strength to stand for their own rights and dignity.</p>
+            </div>
+            <div class="method-action-card">
+                <h3>Stop the Oppressor</h3>
+                <p>We challenge the corrupt and unjust by holding them accountable through fearless public campaigns and unbreakable unity.</p>
+            </div>
+        </div>
+        <p>This is our method. It is a direct command from our faith to end injustice at its root.</p>
     </section>
 
     <section id="our-power" class="container">
@@ -240,13 +317,18 @@
 
     <section id="join" class="container">
         <div class="section-header">
-            <h2>Fulfill Your Duty. Build Your Legacy.</h2>
+            <h2 id="join-heading">Fulfill Your Duty. Build Your Legacy.</h2>
         </div>
         <p>This is more than a cause; it is a calling. This is your personal duty, your answer to God, and your path to an eternal reward. Join the HAQ movement and become a voice for humanity, accountability, and truth.</p>
         <div class="join-buttons">
-            <a href="mailto:info@haq.ngo" class="cta-button">Email Us</a>
+            <a href="mailto:info@haq.ngo" class="cta-button">
+                Email Us
+            </a>
+            <a href="https://chat.whatsapp.com/K39gK2rI4sr22YFBITqo1E" target="_blank" class="cta-button whatsapp-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.203 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Join WhatsApp
+            </a>
             <a href="#" class="cta-button">Volunteer</a>
-            <a href="#" class="cta-button">Donate</a>
         </div>
     </section>
   </main>
